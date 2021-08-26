@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Form1 = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(() => {
+
+    const saved = localStorage.getItem("name");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
+
+useEffect(() => {
+    localStorage.setItem("name", JSON.stringify(name));
+}, [name])
 
   return (
     <form>
