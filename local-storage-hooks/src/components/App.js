@@ -8,7 +8,7 @@ function App() {
 
     <div className="container">
       <h1>localStorage with React Hooks</h1>
-      <Form1/>
+      {/* <Form1/> */}
       <Form2/>
     </div>
   );
